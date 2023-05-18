@@ -13,8 +13,12 @@
   --tea-light: #c5e7b9;
   --tea-milk: #f1f9ee;
 }
-
-html {
+html { 
+  background:var(--fridge-dark) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 	font-size:62.5%;
 }
 * {
