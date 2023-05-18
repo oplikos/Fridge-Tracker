@@ -13,25 +13,17 @@
   --tea-light: #c5e7b9;
   --tea-milk: #f1f9ee;
 }
-
 html {
-	font-size:62.5%;
+  font-size: 62.5%;
+  height: 100%;
 }
-* {
-  font-family: Comfortaa;
-	margin: 0;
-	padding: 0;
-}
-ul, li {
-	list-style: none;
-}
-input {
-	border: none;
-}
+
 body {
   width: 100%;
   height: 100%;
-}.homescreen {
+}
+
+.homescreen {
   box-sizing: border-box;
   padding: 5% 5% 5% 5%;
   width: 100%;
@@ -42,14 +34,16 @@ body {
   flex-direction: column;
   background-color: var(--fridge-dark);
 }
+
 .homescreen .fridgelogo {
   margin-bottom: 5%;
   width: 75%;
-  height: 35%;
-  /* background-color: var(--fridge-medium-light); */
+  height: auto;
+  max-height: 35%;
   border-radius: 2.4rem;
   flex-shrink: 0;
 }
+
 .homescreen .group1 {
   margin-bottom: 5%;
   width: 50%;
@@ -58,143 +52,18 @@ body {
   align-items: center;
   flex-shrink: 0;
 }
-.homescreen .group1 .AddHave {
-  margin-right: 10%;
-  width: 35%;
-  height: 100%;
-  cursor: pointer;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.115;
-  color: var(--fridge-dark);
-  font-family: Comfortaa, 'Source Sans Pro';
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--fridge-light);
-  border-radius: 2.4rem;
-  flex-shrink: 0;
-}
-.homescreen .group1 .AddAll {
-  width: 35%;
-  height: 100%;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.115;
-  color: var(--tea-milk);
-  font-family: Comfortaa, 'Source Sans Pro';
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--tea-medium);
-  border-radius: 2.4rem;
-  flex-shrink: 0;
-}
-.homescreen .FridgeList  {
-  margin: 0% 10% 0% 0% ;
-  font-size: 2.4rem;
-  font-weight: 400;
-  line-height: 1.115;
-  color: var(--fridge-light);
-  font-family: Comfortaa, 'Source Sans Pro';
-  white-space: nowrap;
-  flex-shrink: 0;
-  margin-right: 1.5rem;
-  width: 15.9rem;
-  height: 100%;
-  cursor: pointer;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.115;
-  color: var(--fridge-dark);
-  font-family: Comfortaa, 'Source Sans Pro';
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--fridge-light);
-  border-radius: 2.4rem;
-  flex-shrink: 0;
- }
 
-
-.homescreen .CounterItem {
-  margin: 0rem 17.8rem 0.287rem 0rem;
-  font-size: 2.4rem;
-  font-weight: 400;
-  line-height: 1.115;
-  color: var(--fridge-light);
-  font-family: Comfortaa, 'Source Sans Pro';
-  white-space: nowrap;
-  flex-shrink: 0;
-  margin-right: 1.5rem;
-  width: 15.9rem;
-  height: 100%;
-  cursor: pointer;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.115;
-  color: var(--fridge-dark);
-  font-family: Comfortaa, 'Source Sans Pro';
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--fridge-light);
-  border-radius: 2.4rem;
-  flex-shrink: 0;
-}
-.homescreen .PentryItem {
-  margin: 0rem 17.8rem 0.287rem 0rem;
-  font-size: 2.4rem;
-  font-weight: 400;
-  line-height: 1.115;
-  color: var(--fridge-light);
-  font-family: Comfortaa, 'Source Sans Pro';
-  white-space: nowrap;
-  flex-shrink: 0;
-  margin-right: 1.5rem;
-  width: 15.9rem;
-  height: 100%;
-  cursor: pointer;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.115;
-  color: var(--fridge-dark);
-  font-family: Comfortaa, 'Source Sans Pro';
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--fridge-light);
-  border-radius: 2.4rem;
-  flex-shrink: 0;
-}
+.homescreen .group1 .AddHave,
+.homescreen .group1 .AddAll,
+.homescreen .FridgeList,
+.homescreen .CounterItem,
+.homescreen .PentryItem,
 .homescreen .ShoppingList {
-  /* margin: 0rem 17.8rem 0.287rem 0rem; */
+  margin: 0 1.5rem 0.287rem 0;
   font-size: 2.4rem;
   font-weight: 400;
-  line-height: 50;
-  color: var(--fridge-light);
-  font-family: Comfortaa, 'Source Sans Pro';
-  /* white-space: nowrap; */
-  flex-shrink: 0;
-  margin-right: 1.5rem;
-  /* width: ; */
-  height: 100%;
-  cursor: pointer;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 400;
   line-height: 1.115;
-  color: var(--fridge-dark);
+  color: var(--fridge-light);
   font-family: Comfortaa, 'Source Sans Pro';
   white-space: nowrap;
   display: flex;
@@ -204,28 +73,10 @@ body {
   border-radius: 2.4rem;
   flex-shrink: 0;
 }
-  
-.homescreen .line2 {
-  margin-bottom: 10%;
-  width: 100%;
-  height: 0.1rem;
-  background-color: var(--fridge-light);
-  flex-shrink: 0;
-}
-.homescreen .line1  {
-  margin-bottom: 10%;
-  width: 100%;
-  height: 0.1rem;
-  background-color: var(--fridge-light);
-  flex-shrink: 0;
-}
-.homescreen .line3 {
-  margin-bottom: 10%;
-  width: 100%;
-  height: 0.1rem;
-  background-color: var(--fridge-light);
-  flex-shrink: 0;
-}
+
+.homescreen .line2,
+.homescreen .line1,
+.homescreen .line3,
 .homescreen .line4 {
   margin-bottom: 10%;
   width: 100%;
@@ -234,19 +85,14 @@ body {
   flex-shrink: 0;
 }
 
-
-.list-item {
+.list-item,
+.FridgeListItem,
+.CounterListItem,
+.PentryListItem,
+.ShoppingListItem {
   background-color: var(--fridge-medium);
   color: var(--fridge-light);
   padding: 1rem;
-  border-radius: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.6rem;
-}
-.FridgeListItem, .CounterListItem, .PentryListItem, .ShoppingListItem {
-  background-color: var(--fridge-medium);
-  color: var(--fridge-light);
-  /* padding: 1rem; */
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   font-size: 1.6rem;
