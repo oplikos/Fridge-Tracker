@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="icon" href="./as.png">
@@ -10,7 +9,6 @@
   <title>HomeScreen</title>
   <link rel="stylesheet" href="./HomeScreen_files/homescreen.css">
   <script src="utils\utils.js" defer></script>
-
 </head>
 <body>
 <div class="homescreen">
@@ -53,7 +51,6 @@
   const counterItems = JSON.parse(localStorage.getItem('CounterItemS') || '[]');
   const pentryItems = JSON.parse(localStorage.getItem('PentryItemS') || '[]');
   const shoppingList = JSON.parse(localStorage.getItem('ShoppingListS') || '[]');
-
   // append data to corresponding div elements
   const fridgeListDiv = document.querySelector('.FridgeListS');
   fridgeList.forEach(item => {
