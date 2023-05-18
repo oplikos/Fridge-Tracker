@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="icon" href="./as.png">
+  <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <title>ViewRecipe</title>
+  <link rel="stylesheet" href="./ViewRecipe_files/viewrecipe.css">
+  <script src="utils\utils.js" defer></script>
+ 
+</head>
+<body>
+<div class="viewrecipe">
+  <form>
+    <input class="tiltle" value="" name="name">
+
+    <div class="item">
+      <div class="group1">
+        <p class="itemtext">Product Name</p>
+        <input type ="text" class="dateAdded" value="dateAdded" >
+        <input type ="text" class="dateAdded" value="expire date" >
+      </div>
+    </div>
+    <div class="grocery-list">
+      <!-- append elements here -->
+    </div>
+  </form >
+  <form></form>
+  <p id="demo"></p>
+  <div class="group6">
+    <button class="add" style="background-color: transparent; border-width:0rem" onclick="window.location.href='./CreateRecipe.html'">
+      <img class="delete" src="./ViewRecipe_files/add.png"></button>
+      <button class="deleteButton" style="background-color: transparent; border-width:0rem">
+     <img class="delete" src="./ViewRecipe_files/delete.png"></button>
+  </div>
+  <button class="backtorecipe" onclick="window.location.href='./HomeScreen.html'">Back to Main</button>
+</div>
+<script>
+  // retrieve list parameter from URL query string
+  const urlParams = new URLSearchParams(window.location.search);
+  const listParam = urlParams.get('list');
+  const nameInput = document.querySelector('.tiltle');
+  nameInput.value = listParam;
+  let listData = [];
+  if(listParam == "All"){
+    const fridgeListData = JSON.parse(localStorage.getItem("FridgeListS") || '[]');
+    const counterItemListData = JSON.parse(localStorage.getItem("CounterItemS") || '[]');
+    const pantryItemListData = JSON.parse(localStorage.getItem("PentryItemS") || '[]');
+    const shoppingListData = JSON.parse(localStorage.getItem("ShoppingListS") || '[]');
+    listData = listData.concat(fridgeListData, counterItemListData, pantryItemListData, shoppingListData);
+    //listData.push(...fridgeListData, ...counterItemListData, ...pantryItemListData, ...shoppingListData);
+    //console.log(listData);
+  }
+  else{
+  // retrieve data from localStorage based on list parameter
+   listData = JSON.parse(localStorage.getItem(listParam) || '[]');
+   //console.log(listData);
+
+  }
+  // append data to grocery-list div
+  if( listParam == 'ShoppingListS'){
+    const groceryListDiv = document.querySelector('.grocery-list');
+    listData.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'item';
+      const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'itemCheckbox';
+      const group1Div = document.createElement('div');
+      group1Div.className = 'group1';
+      const productP = document.createElement('p');
+      productP.className = 'itemtext';
+      productP.textContent = item.name;
+      const dateAddedInput = document.createElement('input');
+      dateAddedInput.type = 'date';
+      dateAddedInput.className = 'dateAdded';
+      dateAddedInput.value = item.dateAdded;
+      group1Div.appendChild(checkbox);
+      group1Div.appendChild(productP);
+      group1Div.appendChild(dateAddedInput);
+      div.appendChild(group1Div);
+      groceryListDiv.appendChild(div);
+    });
+  }
+  else{
+  const groceryListDiv = document.querySelector('.grocery-list');
+  listData.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'item';
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'itemCheckbox';
+    const group1Div = document.createElement('div');
+    group1Div.className = 'group1';
+    const productP = document.createElement('p');
+    productP.className = 'itemtext';
+    productP.textContent = item.name;
+    const dateAddedInput = document.createElement('input');
+    dateAddedInput.type = 'date';
+    dateAddedInput.className = 'dateAdded';
+    dateAddedInput.value = item.dateAdded;
+    const dateExpireInput = document.createElement('input');
+    dateExpireInput.type = 'date';
+    dateExpireInput.className = 'dateExpire';
+    dateExpireInput.value = item.dateExpire;
+    group1Div.appendChild(checkbox);
+    group1Div.appendChild(productP);
+    group1Div.appendChild(dateAddedInput);
+    group1Div.appendChild(dateExpireInput);
+    div.appendChild(group1Div);
+    groceryListDiv.appendChild(div);
+});
+}
+const deleteButton = document.querySelector('.deleteButton');
+deleteButton.addEventListener('click', () => {
+  const checkboxes = document.querySelectorAll('.itemCheckbox');
+  const checkedItems = [];
+
+  checkboxes.forEach((checkbox, index) => {
+    if (checkbox.checked) {
+      checkedItems.push(index);
+    }
+  });
+
+  if (listParam === 'All') {
+    // Delete items from individual lists
+    const fridgeListData = JSON.parse(localStorage.getItem('FridgeListS') || '[]');
+    const counterItemListData = JSON.parse(localStorage.getItem('CounterItemS') || '[]');
+    const pantryItemListData = JSON.parse(localStorage.getItem('PentryItemS') || '[]');
+    const shoppingListData = JSON.parse(localStorage.getItem('ShoppingListS') || '[]');
+
+    const deletedItems = [];
+
+    checkedItems.forEach((index) => {
+      if (index < fridgeListData.length) {
+        fridgeListData.splice(index - deletedItems.length, 1);
+        deletedItems.push('FridgeListS');
+      } else if (index < fridgeListData.length + counterItemListData.length) {
+        counterItemListData.splice(index - fridgeListData.length - deletedItems.length, 1);
+        deletedItems.push('CounterItemS');
+      } else if (index < fridgeListData.length + counterItemListData.length + pantryItemListData.length) {
+        pantryItemListData.splice(index - fridgeListData.length - counterItemListData.length - deletedItems.length, 1);
+        deletedItems.push('PentryItemS');
+      } else {
+        shoppingListData.splice(index - fridgeListData.length - counterItemListData.length - pantryItemListData.length - deletedItems.length, 1);
+        deletedItems.push('ShoppingListS');
+      }
+    });
+
+    localStorage.setItem('FridgeListS', JSON.stringify(fridgeListData));
+    localStorage.setItem('CounterItemS', JSON.stringify(counterItemListData));
+    localStorage.setItem('PentryItemS', JSON.stringify(pantryItemListData));
+    localStorage.setItem('ShoppingListS', JSON.stringify(shoppingListData));
+
+    deletedItems.forEach((list) => {
+      const listData = document.querySelector('.grocery-list[data-list="' + list + '"]');
+      if (listData) {
+        listData.innerHTML = '';
+      }
+    });
+  } else {
+    // Delete items from the selected list
+    checkedItems.forEach((index) => {
+      listData.splice(index, 1);
+    });
+
+    localStorage.setItem(listParam, JSON.stringify(listData));
+
+    const listDataElement = document.querySelector('.grocery-list[data-list="' + listParam + '"]');
+    if (listDataElement) {
+      listDataElement.innerHTML = '';
+    }
+  }
+
+  window.location.reload();
+});
+
+</script>
+
+</body>
+</html>

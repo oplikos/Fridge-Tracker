@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="icon" href="./as.png">
+  <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <title>HomeScreen</title>
+  <link rel="stylesheet" href="./HomeScreen_files/homescreen.css">
+  <script src="utils\utils.js" defer></script>
+
+</head>
+<body>
+<div class="homescreen">
+  <div class="fridgelogo">
+    <img class="fridgelogo" src="./as.png">
+  </div>
+  <div class="group1">
+    <button class="AddHave" onclick="window.location.href='./CreateRecipe.html'">Have</button>
+    <button class="AddAll" onclick="window.location.href='./ViewRecipe.html?list=All'">All</button>
+  </div>
+  <button class="FridgeList" onclick="window.location.href='./ViewRecipe.html?list=FridgeListS'">FridgeList</button>
+  <div class="line1">
+  </div>
+  <div class = "FridgeListS">
+    <!-- append elements -->
+  </div>  
+  <button class="CounterItem" onclick="window.location.href='./ViewRecipe.html?list=CounterItemS'">CounterItem</button>
+  <div class="line2">
+  </div>
+  <div class = "CounterItemS">
+    <!-- append elements -->
+  </div>  
+  <button class="PentryItem" onclick="window.location.href='./ViewRecipe.html?list=PentryItemS'">PentryItem</button>
+  <div class="line3">
+  </div>
+  <div class = "PentryItemS">
+    <!-- append elements -->
+  </div>  
+  <button class="ShoppingList" onclick="window.location.href='./ViewRecipe.html?list=ShoppingListS'">Add to Shopping List</button>
+  <div class="line4">
+  </div>
+  <div class = "ShoppingListS">
+    <!-- append elements -->
+  </div>
+  
+</div>
+<script>
+  // retrieve data from localStorage
+  const fridgeList = JSON.parse(localStorage.getItem('FridgeListS') || '[]');
+  const counterItems = JSON.parse(localStorage.getItem('CounterItemS') || '[]');
+  const pentryItems = JSON.parse(localStorage.getItem('PentryItemS') || '[]');
+  const shoppingList = JSON.parse(localStorage.getItem('ShoppingListS') || '[]');
+
+  // append data to corresponding div elements
+  const fridgeListDiv = document.querySelector('.FridgeListS');
+  fridgeList.forEach(item => {
+    const div = document.createElement('div');
+    div.classList.add('FridgeListItem');
+    div.textContent = `${item.name}, Added at ${item.dateAdded}, Expiry at ${item.dateExpire}`;
+    fridgeListDiv.innerHTML += '</div>';
+    fridgeListDiv.appendChild(div);
+  });
+
+  const counterItemDiv = document.querySelector('.CounterItemS');
+  counterItems.forEach(item => {
+    const div = document.createElement('div');
+    div.classList.add('CounterListItem');
+    div.textContent = `${item.name}, Added at ${item.dateAdded}, Expiry at ${item.dateExpire}`;
+    counterItemDiv.appendChild(div);
+  });
+
+  const pentryItemDiv = document.querySelector('.PentryItemS');
+  pentryItems.forEach(item => {
+    const div = document.createElement('div');
+    div.classList.add('PentryListItem');
+    div.textContent = `${item.name}, Added: ${item.dateAdded}, Expiry: ${item.dateExpire}`;
+    pentryItemDiv.appendChild(div);
+  });
+
+  const shoppingListDiv = document.querySelector('.ShoppingListS');
+  shoppingList.forEach(item => {
+    const div = document.createElement('div');
+    div.classList.add('ShoppingListItem');
+    div.textContent = `${item.name}, Added: ${item.dateAdded}, Expiry: ${item.dateExpire}`;
+    shoppingListDiv.appendChild(div);
+  });
+</script>
+
+
+</body>
+</html>

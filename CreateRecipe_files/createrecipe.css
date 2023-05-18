@@ -1,0 +1,181 @@
+:root {
+  --fridge-dark: #37251b;
+  --fridge-medium-dark: #80411e;
+  --fridge-medium: #ad6e2f;
+  --fridge-medium-light: #d49961;
+  --fridge-light: #e4bc84;
+  --fridge-Item: #faeadc;
+
+  --tea-dark: #222f1d;
+  --tea-medium-dark: #2c3e26;
+  --tea-medium: #465f43;
+  --tea-medium-light: #607f60;
+  --tea-light: #c5e7b9;
+  --tea-Item: #f1f9ee;
+}
+
+html {
+	font-size:62.5%;
+}
+* {
+  font-family: Comfortaa;
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 100%;
+  height: 100%;
+}.createrecipe {
+  box-sizing: border-box;
+  padding: 3.1rem 2.4rem 4.5rem 2.8rem;
+  width: 100%;
+  /* height: 100%; */
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--fridge-Item);
+}
+.createrecipe .title {
+  margin-bottom: 2.4rem;
+  width: 100%;
+  height: 10.5rem;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.115;
+  color: var(--fridge-dark);
+  font-family: Comfortaa, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--fridge-medium-light);
+  border-radius: 2.4rem;
+  flex-shrink: 0;
+}
+.createrecipe .Item {
+  margin: 0rem 5rem 2.5rem 0rem;
+  width:100%;
+  height: 100;
+  border-bottom: solid 0.1rem var(--fridge-dark);
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+.createrecipe .Item .group1 {
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  align-items: flex-start;
+}
+.createrecipe .Item .group1 .Text {
+  margin-right: auto;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.115;
+  color: var(--fridge-dark);
+  font-family: Comfortaa, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.createrecipe .Item .group1 .component {
+  width: 11.2rem;
+  height: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.115;
+  color: var(--fridge-dark);
+  font-family: Comfortaa, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--fridge-light);
+  border-radius: 0.8rem;
+  flex-shrink: 0;
+}
+form {
+  height: 90%;
+}
+.createrecipe .group7 {
+  margin: 0rem 3.2rem 2.4rem 3.8rem;
+  width: calc(100% - 7rem);
+  height: 4.9rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.createrecipe .group7 .save {
+  margin-right: 1.8rem;
+  width: 90%;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.115;
+  color: var(--fridge-Item);
+  font-family: Comfortaa, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--fridge-medium);
+  border-radius: 2.4rem;
+  flex-shrink: 0;
+}
+.createrecipe .group7 .delete {
+  width: 4.9rem;
+  height: 4.9rem;
+  cursor: pointer;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.createrecipe .backtotecipe {
+  margin: 0 2.9rem;
+  width: calc(100% - 5.8rem);
+  height: 5.4rem;
+  cursor: pointer;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.115;
+  color: var(--fridge-dark);
+  font-family: Comfortaa, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--fridge-light);
+  border-radius: 2.4rem;
+  flex-shrink: 0;
+}
+
+.backtorecipe {
+  margin: 0rem 2.5rem 0rem 3.8rem;
+  width: calc(100% - 3rem);
+  height: 5.4rem;
+  cursor: pointer;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.115;
+  color: var(--fridge-dark);
+  font-family: Comfortaa, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--fridge-light);
+  border-radius: 2.4rem;
+  flex-shrink: 0;
+}

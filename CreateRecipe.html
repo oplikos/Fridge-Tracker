@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="icon" href="./as.png">
+  <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <title>CreateItem</title>
+  <link rel="stylesheet" href="./CreateRecipe_files/createrecipe.css">
+  
+  <script src="utils\utils.js" defer></script>
+</head>
+<body>
+<div class="createrecipe">
+  <form>
+    <p class="title"  name="name">Add Item</p>
+    <div class="Item">
+      <div class="group1" >
+        <p class="Text">Product Name</p>
+        <input contenteditable="true" class="component" value="Nescafé" name="ProductBrand">
+      </div>
+    </div>
+    <div class="Item">
+      <div class="group1" >
+        <p class="Text">Added date</p>
+        <input contenteditable="true"  type = "date" class ="component" id="e" name="dateAdded">
+        <script>
+          document.getElementById('e').value = new Date().toISOString().substring(0, 10);
+          </script>
+      </div>
+    </div>
+
+
+    <div class="Item">
+      <div class="group1" >
+
+        <p class="Text">Expier Date</p>
+        <input contenteditable="true"  type = "date" class="component" name="dateExpire">
+
+      </div>
+  </div>
+  <div class="Item">
+    <div class="group1" >
+      <label class = "Text" for="list-select">Where to Add:</label>
+      <select  class="component" id="list-select" name="list-select">
+        <option value="FridgeListS">FridgeList</option>
+        <option value="CounterItemS">CounterItem</option>
+        <option value="PentryItemS">PentryItem</option>
+        <option value="ShoppingListS">ShoppingList</option>
+      </select>
+  </div>
+</div>
+  </form>
+  <form class="just"></form>
+  <div class="group1">
+  <div class="group7">
+    <button class="save" onclick="addItem()">Save</button>
+    <button class="delete" onclick="window.location.href='./HomeScreen.html'" 
+      style="background-color: transparent; border-width:0rem">
+      <img class="delete" src="./CreateRecipe_files/delete.png"></button>
+  </div>
+    <button class="backtorecipe" onclick="window.location.href='./HomeScreen.html'">Back to Main</button>
+</div>
+
+</body>
+</html>
