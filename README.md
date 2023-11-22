@@ -1,5 +1,5 @@
 # Fridge-Tracker
-![img1](./img/1.jpg)
+![img1](./img/1.jpg) <br>
 FridgeTracker Device:
 The FridgeTracker device has a compact and sleek design, allowing it to be easily magnetized
 onto the fridge. It is lightweight and durable, designed to withstand everyday use. The device
@@ -53,5 +53,5 @@ factors, FridgeTracker can provide a seamless and user-friendly experience for i
 varying technical abilities. The focus on simplicity, clear feedback, and accessibility contributes
 to a positive user experience, increasing the product's adoption and usability among a wide range
 of users.
-Below: Mockup of App in dark and light modes.
+Below: Mockup of App in dark and light modes.<br>
 ![img2](./img/2.jpg)
