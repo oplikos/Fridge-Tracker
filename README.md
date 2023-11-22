@@ -54,4 +54,5 @@ varying technical abilities. The focus on simplicity, clear feedback, and access
 to a positive user experience, increasing the product's adoption and usability among a wide range
 of users.<br>
 Below: Mockup of App in dark and light modes.<br>
-![img2](./img/2.jpg)
+![img2](./img/2.jpg)<br>
+[![Watch the video](https://youtu.be/XkNvWYqAMog)](https://youtu.be/XkNvWYqAMog)<br>
